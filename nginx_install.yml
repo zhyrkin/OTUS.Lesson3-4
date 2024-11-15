@@ -1,0 +1,13 @@
+---
+- name: Install Nginx
+  hosts: nginx
+  gather_facts: false
+  become: true
+  become_user: root
+  become_method: sudo
+  
+  vars:
+    nginx_listen_port: 8080
+  
+  roles:
+    - install_nginx
